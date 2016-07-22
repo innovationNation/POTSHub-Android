@@ -5,4 +5,5 @@ package com.innovationnation.potshub;
  */
 public class PData {
     private String[] types = {"Neuropathic", "Hyperandrogenic", "Partial Dysautonomic"};
+
 }
