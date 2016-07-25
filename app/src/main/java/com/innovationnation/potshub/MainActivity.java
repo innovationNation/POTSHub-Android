@@ -13,7 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         updateTextFields();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -69,5 +71,9 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        updateTextFields();
     }
 }
