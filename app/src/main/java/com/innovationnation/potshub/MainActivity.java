@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         setSupportActionBar(toolbar);
 
         final Button trackButton = (Button) findViewById(R.id.track_button);
-        final Button forumButton = (Button) findViewById(R.id.forum_button);
+        //final Button forumButton = (Button) findViewById(R.id.forum_button);
         final Button blogButton = (Button) findViewById(R.id.blog_button);
         trackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -32,20 +32,17 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                */
             }
         });
-        forumButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        //forumButton.setOnClickListener(new View.OnClickListener() {
+            //public void onClick(View v) {
               /*
               Intent i =new Intent(this, ForumActivity.class);
             startActivity(i);
                */
-            }
-        });
+            //}
+        //});
         blogButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-              /*
-              Intent i =new Intent(this, BlogActivity.class);
-            startActivity(i);
-               */
+                openBlogsPage(v);
             }
         });
 
@@ -104,5 +101,10 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         updateTextFields();
+    }
+
+    public void openBlogsPage(View view){
+        Intent i = new Intent(this, BlogActivity.class);
+        startActivity(i);
     }
 }
