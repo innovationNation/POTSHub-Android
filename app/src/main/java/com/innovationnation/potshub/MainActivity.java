@@ -4,16 +4,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +21,42 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final Button trackButton = (Button) findViewById(R.id.track_button);
+        final Button forumButton = (Button) findViewById(R.id.forum_button);
+        final Button blogButton = (Button) findViewById(R.id.blog_button);
+        trackButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+              /*
+              Intent i =new Intent(this, TrackActivity.class);
+            startActivity(i);
+               */
+            }
+        });
+        forumButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+              /*
+              Intent i =new Intent(this, ForumActivity.class);
+            startActivity(i);
+               */
+            }
+        });
+        blogButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+              /*
+              Intent i =new Intent(this, BlogActivity.class);
+            startActivity(i);
+               */
+            }
+        });
+
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
         updateTextFields();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
@@ -51,27 +78,29 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i =new Intent(this, PrefActivity.class);
+            Intent i = new Intent(this, PrefActivity.class);
             startActivity(i);
             return true;
         }
         updateTextFields();
         return super.onOptionsItemSelected(item);
     }
-    public boolean updateTextFields(){
-        try{
-        TextView view = (TextView) findViewById(R.id.text_welcome);
-        StringBuilder b = new StringBuilder();
-        b.append("Welcome, ");
-        SharedPreferences p = PreferenceManager.getDefaultSharedPreferences(this);
 
-        b.append(p.getString("username", "NULL"));
-        view.setText(b.toString());}
-        catch(Exception e){
+    public boolean updateTextFields() {
+        try {
+            TextView view = (TextView) findViewById(R.id.text_welcome);
+            StringBuilder b = new StringBuilder();
+            b.append("Welcome, ");
+            SharedPreferences p = PreferenceManager.getDefaultSharedPreferences(this);
+
+            b.append(p.getString("username", "NULL"));
+            view.setText(b.toString());
+        } catch (Exception e) {
             return false;
         }
         return true;
     }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         updateTextFields();

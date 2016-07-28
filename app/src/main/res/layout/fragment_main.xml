@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="2"
     tools:context="com.innovationnation.potshub.MainActivityFragment"
     tools:showIn="@layout/activity_main">
 
@@ -13,52 +14,135 @@
         android:id="@+id/text_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Hello, Guest!"
         android:textSize="40sp"
-        android:typeface="sans"
         android:textStyle="bold"
-        android:text="Hello, Guest!"/>
+        android:typeface="sans" />
 
     <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textClock"
-        android:textSize="35sp"
-        android:typeface="sans"
-        android:format12Hour="hh:mm a"
-        android:format24Hour="hh:mm "
-        android:layout_below="@+id/text_welcome"
-        android:layout_toEndOf="@+id/editText2" />
-
-    <TextClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textClock2"
+        android:layout_below="@+id/text_welcome"
+        android:layout_toEndOf="@+id/its"
+        android:format12Hour="hh:mm a"
+        android:format24Hour="HH:mm "
         android:textSize="35sp"
-        android:typeface="sans"
+        android:typeface="sans" />
+
+    <TextClock
+        android:id="@+id/textClock2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textClock"
+        android:layout_toEndOf="@+id/happy"
         android:format12Hour="EEEE"
         android:format24Hour="EEEE"
-        android:layout_below="@+id/textClock"
-        android:layout_toEndOf="@+id/editText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textClock"
-        android:layout_alignParentStart="true"
         android:textSize="35sp"
-        android:typeface="sans"
-        android:text="Happy "/>
+        android:typeface="sans" />
 
     <TextView
+        android:id="@+id/happy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textClock"
+        android:text="Happy "
+        android:textSize="35sp"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/its"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/text_welcome"
-        android:textSize="35sp"
-        android:typeface="sans"
+        android:paddingEnd="10dp"
         android:text="It's"
-        android:layout_alignParentStart="true"
-        android:paddingEnd="10dp" />
+        android:textSize="35sp"
+        android:typeface="sans" />
+
+
+    <LinearLayout
+
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/happy">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:text="@string/track_button_name"
+                android:id="@+id/track_button"
+                android:color="#4A86E8"
+                android:background="@drawable/buttonshape"
+                android:paddingEnd="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:paddingStart="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:text="@string/forum_button_name"
+                android:id="@+id/forum_button"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/buttonshape"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:text="@string/blog_button_name"
+                android:id="@+id/blog_button"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/buttonshape"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:paddingTop="5dp">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:text="@string/clock_name"
+                android:id="@+id/pots_clock"
+                android:background="@drawable/buttonshape"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
