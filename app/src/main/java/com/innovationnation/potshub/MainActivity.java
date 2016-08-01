@@ -21,34 +21,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final Button trackButton = (Button) findViewById(R.id.track_button);
-        final Button forumButton = (Button) findViewById(R.id.forum_button);
-        final Button blogButton = (Button) findViewById(R.id.blog_button);
-        trackButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-              /*
-              Intent i =new Intent(this, TrackActivity.class);
-            startActivity(i);
-               */
-            }
-        });
-        forumButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-              /*
-              Intent i =new Intent(this, ForumActivity.class);
-            startActivity(i);
-               */
-            }
-        });
-        blogButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-              /*
-              Intent i =new Intent(this, BlogActivity.class);
-            startActivity(i);
-               */
-            }
-        });
-
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public boolean updateTextFields() {
+        /*
         try {
             TextView view = (TextView) findViewById(R.id.text_welcome);
             StringBuilder b = new StringBuilder();
@@ -91,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         } catch (Exception e) {
             return false;
         }
+
+        */
         return true;
     }
 
