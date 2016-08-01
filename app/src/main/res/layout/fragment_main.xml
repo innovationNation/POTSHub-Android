@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--comment-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,142 +8,64 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:weightSum="2"
+
+    android:orientation="vertical"
     tools:context="com.innovationnation.potshub.MainActivityFragment"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:id="@+id/text_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello, Guest!"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
-
-    <TextClock
-        android:id="@+id/textClock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_welcome"
-        android:layout_toEndOf="@+id/its"
-        android:format12Hour="hh:mm a"
-        android:format24Hour="HH:mm "
-        android:textSize="35sp"
-        android:typeface="sans" />
-
-    <TextClock
-        android:id="@+id/textClock2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textClock"
-        android:layout_toEndOf="@+id/happy"
-        android:format12Hour="EEEE"
-        android:format24Hour="EEEE"
-        android:textSize="35sp"
-        android:typeface="sans" />
-
-    <TextView
-        android:id="@+id/happy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textClock"
-        android:text="Happy "
-        android:textSize="35sp"
-        android:typeface="sans" />
-
-    <TextView
-        android:id="@+id/its"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/text_welcome"
-        android:paddingEnd="10dp"
-        android:text="It's"
-        android:textSize="35sp"
-        android:typeface="sans" />
-
-
     <LinearLayout
-
-        android:id="@+id/layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_below="@id/happy">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
 
-        <LinearLayout
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/onetap_water"
+                    android:src="@drawable/watericon"
+                    android:background="@color/alphaChannel"
+                    android:layout_marginStart="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/salt_icon"
+                    android:src="@drawable/salticon"
+                    android:layout_marginEnd="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:orientation="horizontal"
-            android:paddingTop="5dp">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:text="@string/track_button_name"
-                android:id="@+id/track_button"
-                android:color="#4A86E8"
-                android:background="@drawable/buttonshape"
-                android:paddingEnd="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:paddingStart="5dp"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:text="@string/forum_button_name"
-                android:id="@+id/forum_button"
-                android:paddingEnd="5dp"
-                android:paddingStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/buttonshape"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:text="@string/blog_button_name"
-                android:id="@+id/blog_button"
-                android:paddingEnd="5dp"
-                android:paddingStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/buttonshape"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:paddingTop="5dp">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_weight="0.5"
-                android:layout_height="match_parent"
-                android:text="@string/clock_name"
-                android:id="@+id/pots_clock"
-                android:background="@drawable/buttonshape"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:textColor="#FFFFFF"
-                android:textSize="32sp"
-                />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Nutrition Trackers"
+            android:id="@+id/button"
+            android:layout_gravity="center|bottom" />
 
     </LinearLayout>
 
 
-</RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POTS Clock"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Social Media"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
