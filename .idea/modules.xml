@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/POTSHub.iml" filepath="$PROJECT_DIR$/POTSHub.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/potshub-android.iml" filepath="$PROJECT_DIR$/potshub-android.iml" />
     </modules>
   </component>
 </project>
